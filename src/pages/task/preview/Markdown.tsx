@@ -133,19 +133,23 @@ import { useScrollPage } from "../../../hooks/useScrollPage";
 import { useEffect } from "react";
 import { usePreviewState } from "./state";
 
+
+const TRIGGER_CONTAINER_ID = "MARKDOWN_VIEWER"
+
+
 export function Markdown() {
   const { currentPage, containerRef , scrollToPage } = useScrollPage();
-  const { previewIndex,  setPreviewIndex } = usePreviewState();
+  const { triggerContainerId , previewIndex,  setPreviewIndex } = usePreviewState();
   useEffect(() => {
     if(currentPage!==previewIndex){
-      setPreviewIndex(currentPage);
+      setPreviewIndex(currentPage,TRIGGER_CONTAINER_ID);
     }
   }, [currentPage]);
   useEffect(() => {
-    if(currentPage!==previewIndex){
+    if(triggerContainerId!==TRIGGER_CONTAINER_ID){
       scrollToPage(previewIndex)
     }
-  }, [previewIndex]);
+  }, [previewIndex , triggerContainerId]);
 
   
   return (

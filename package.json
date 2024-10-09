@@ -10,6 +10,7 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@douyinfe/semi-icons-lab": "^2.67.0",
     "@douyinfe/semi-ui": "^2.67.0",
     "@semi-bot/semi-theme-strapi": "^0.1.4",
     "@tauri-apps/api": "^1",

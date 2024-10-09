@@ -2,23 +2,18 @@ import * as PDFJS from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.mjs?url";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePreviewState } from "./state";
-import { Skeleton } from "@douyinfe/semi-ui";
 import { PDFViewerSkeleton } from "./PDFViewerSkeleton";
 
 PDFJS.GlobalWorkerOptions.workerSrc = workerUrl;
-// 用于判断元素在特定可滚动区域内的可见性
 function isElementInScrollableContainer(
   el: HTMLDivElement,
   container: HTMLDivElement
 ) {
   const rect = el.getBoundingClientRect();
+  // 按照container的滚动条来判断
   const containerRect = container.getBoundingClientRect();
-  return (
-    rect.top >= containerRect.top &&
-    rect.left >= containerRect.left &&
-    rect.bottom <= containerRect.bottom &&
-    rect.right <= containerRect.right
-  );
+  
+  return rect.top >= containerRect.top  
 }
 function useRenderPDF(url: string) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -86,29 +81,44 @@ function useRenderPDF(url: string) {
 const url =
   "https://static.openxlab.org.cn/opendatalab/assets/pdf/demo1/%E7%A4%BA%E4%BE%8B1.pdf";
 
+
+const TRIGGER_CONTAINER_ID = "PDF_VIWER"
+
 export function PDFViewer() {
   const { loading, containerRef } = useRenderPDF(url);
-  const { previewIndex, totalPages, setPreviewIndex } = usePreviewState();
+  const { triggerContainerId,previewIndex, totalPages, setPreviewIndex } = usePreviewState();
   const scrollToPage = useCallback((pageIndex: number) => {
     const pageElement = containerRef.current?.querySelector(
       `[data-page="${pageIndex}"]`
     );
-    pageElement?.scrollIntoView({});
+    // 判断是否在
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    const elementRect = pageElement?.getBoundingClientRect();
+
+    const isVisible = containerRect && elementRect &&  elementRect.top >= containerRect.top && elementRect.top<= containerRect.bottom
+    if(!isVisible){
+      pageElement?.scrollIntoView({});
+    }
+
   }, []);
   useEffect(() => {
-    scrollToPage(previewIndex);
-  }, [previewIndex]);
-  const onScroll = useCallback<
-    NonNullable<React.DOMAttributes<HTMLDivElement>["onScroll"]>
-  >((e) => {
+    if(triggerContainerId!==TRIGGER_CONTAINER_ID){
+      scrollToPage(previewIndex);
+    }
+  }, [triggerContainerId , previewIndex]);
+  const onScroll = useCallback(() => {
     const elements = containerRef.current?.querySelectorAll("[data-page]");
     if (!elements) {
       return;
     }
+    const containerRect = containerRef.current?.getBoundingClientRect();
+
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i] as HTMLDivElement;
-      if (isElementInScrollableContainer(element, e.target as HTMLDivElement)) {
-        setPreviewIndex(parseInt(element.getAttribute("data-page")!));
+      const elementRect = element.getBoundingClientRect();
+      if(containerRect &&  elementRect.top >= containerRect.top && elementRect.top<= containerRect.bottom){
+        const pageIndex = parseInt(element.getAttribute("data-page")!);
+        setPreviewIndex(pageIndex,TRIGGER_CONTAINER_ID);
         break;
       }
     }

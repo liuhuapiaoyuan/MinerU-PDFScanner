@@ -3,9 +3,10 @@ import {
   IconHome,
   IconHistogram,
   IconGithubLogo,
-  IconSetting,
 } from "@douyinfe/semi-icons";
-import { useNavigate, useResolvedPath } from "react-router-dom";
+import { IconConfig, IconList, IconRating } from "@douyinfe/semi-icons-lab";
+
+import { useNavigate } from "react-router-dom";
 import NavFooter from "@douyinfe/semi-ui/lib/es/navigation/Footer";
 
 export function Menus() {
@@ -21,12 +22,12 @@ export function Menus() {
         {
           itemKey: "/createTask",
           text: "创建任务",
-          icon: <IconHome size="large" />,
+          icon: <IconRating  size="large" />,
         },
         {
           itemKey: "/task",
           text: "扫描历史",
-          icon: <IconHistogram size="large" />,
+          icon: <IconList  size="large" />,
           items: [
             { itemKey: "/task/processing", text: "进行中" },
             { itemKey: "/task/done", text: "已完成" },
@@ -36,11 +37,11 @@ export function Menus() {
         {
           itemKey: "setting",
           text: "设置",
-          icon: <IconSetting size="large" />,
+          icon: <IconConfig size="large" />,
         } 
       ]}
       footer={
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center justify-center gap-2">
           <NavFooter className="!p-0" collapseButton />
           <div className="group p-2 cursor-pointer rounded-xl text-center border  hover:shadow-sm flex flex-wrap items-center justify-center">
             <IconGithubLogo size="large" />

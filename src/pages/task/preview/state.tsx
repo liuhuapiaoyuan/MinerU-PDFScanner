@@ -5,12 +5,14 @@ import { createContext, PropsWithChildren, useContext, useReducer } from "react"
 interface IPreviewState {
   previewIndex: number;
   totalPages: number;
-  setPreviewIndex: (index: number) => void;
+  setPreviewIndex: (index: number , triggerContainerId?:string) => void;
   setTotalPage: (totalPage: number) => void;
+  triggerContainerId: string;
 }
 
 const initialState: IPreviewState = {
   previewIndex: 0,
+  triggerContainerId:"",
   totalPages:0 , 
   setPreviewIndex: () => {},
   setTotalPage: () => {}
@@ -24,6 +26,7 @@ function previewReducer(state: IPreviewState, action: any) {
       return {
         ...state,
         previewIndex: action.payload,
+        triggerContainerId:action.triggerContainerId??""
       };
     case "SET_TOTAL_PAGE":
         return {
@@ -44,12 +47,13 @@ export function PreviewStateContainer(props: PropsWithChildren) {
   return (
     <PreviewStateContext.Provider
       value={{
+        triggerContainerId:"",
         previewIndex: state.previewIndex,
         totalPages: state.totalPages,
         setTotalPage: (totalPage: number) =>
           dispatch({ type: "SET_TOTAL_PAGE", payload: totalPage }),
-        setPreviewIndex: (index: number) =>
-          dispatch({ type: "SET_PREVIEW_INDEX", payload: index }),
+        setPreviewIndex: (index: number , triggerContainerId?:string) =>
+          dispatch({ type: "SET_PREVIEW_INDEX", payload: index ,triggerContainerId}),
       }}
     >
       {props.children}

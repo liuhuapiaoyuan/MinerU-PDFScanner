@@ -1,6 +1,7 @@
 import { Nav, Button } from "@douyinfe/semi-ui";
 import { IconGithubLogo } from "@douyinfe/semi-icons";
 import { useNavigate } from "react-router-dom";
+import { ThemeButton } from "./ThemeButton";
 
 export function Navigator() {
   const navigate = useNavigate();
@@ -11,7 +12,6 @@ export function Navigator() {
           <img src="/mineru.png" className="h-9 mr-2" />
           <span>PDF扫描助理</span>
         </Nav.Header>
-
         <Nav.Footer>
           <Button
             onClick={() =>

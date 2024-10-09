@@ -1,11 +1,18 @@
+import { Page } from "@/components/Page";
+import { Form, Button, Card } from "@douyinfe/semi-ui";
 
-
-export function Component(){
-    return <div>
-        系统参数配置
-
- <p>1. 打开CUDA</p>
- <p>2. 选择导出目录</p>
- <p>3. 后台项目引导，接口配置</p>
-    </div>
+export function Component() {
+  return (
+    <Page>
+      <Card title="系统设置" className="w-full">
+        <Form layout="vertical">
+          <Form.Input field="minerUApi" label="MinerU接口" trigger="blur" />
+          <Form.Input field="cacheDir" label="缓存路径" trigger="blur" />
+          <Button type="primary" className="mt-2" htmlType="submit">
+            保存配置
+          </Button>
+        </Form>
+      </Card>
+    </Page>
+  );
 }
