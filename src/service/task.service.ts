@@ -58,7 +58,7 @@ export class TaskService {
             if (fail) {
                 Notification.error({
                     title: '任务处理失败',
-                    content: `文件：${task.file_name}处理失败`,
+                    content: `文件：${task.file_name},${status}`,
                 })
             }
             const newStatus = fail ? "fail" : status;

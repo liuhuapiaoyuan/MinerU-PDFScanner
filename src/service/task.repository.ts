@@ -27,6 +27,7 @@ export class TaskRepository {
         task.status,
       ]
     );
+    
   }
 
   async update(task: Task): Promise<void> {

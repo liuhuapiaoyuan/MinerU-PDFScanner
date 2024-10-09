@@ -5,6 +5,7 @@ import { Page } from "@/components/Page";
 import { Task } from "@/service/task.model";
 import { taskRepository } from "@/service/task.repository";
 import {  useNavigate } from "react-router-dom";
+import { taskService } from "@/service/task.service";
 const { Text } = Typography;
 export function Component() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export function Component() {
         </p>
         <Upload
           action="http://127.0.0.1:8080/"
-          onSuccess={(res: Task) => {
+          onSuccess={async (res: Task) => {
             Toast.info({
               content: (
                 <span>
@@ -32,10 +33,12 @@ export function Component() {
                 </span>
               ),
             });
-            taskRepository.create({
+            const task = {
               ...res,
               status: "pending",
-            });
+            };
+            await taskRepository.create(task);
+            taskService.addTask(task)
           }}
           className="h-64 w-96"
           fileName="file"

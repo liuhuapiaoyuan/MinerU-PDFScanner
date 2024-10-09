@@ -3,6 +3,7 @@ import workerUrl from "pdfjs-dist/build/pdf.worker.mjs?url";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePreviewState } from "./state";
 import { PDFViewerSkeleton } from "./PDFViewerSkeleton";
+import { Button } from "@douyinfe/semi-ui";
 
 PDFJS.GlobalWorkerOptions.workerSrc = workerUrl;
 
@@ -126,12 +127,19 @@ export function PDFViewer(props:{pdf:string}) {
       >
         <PDFViewerSkeleton />
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex gap-2 items-center justify-center">
         {/* 工具栏 */}
+        <Button
+        disabled={previewIndex ==1}
+        onClick={() => setPreviewIndex(Math.max(0,previewIndex-1))}>
+          上一页
+        </Button>
         {previewIndex}/{totalPages}
-        <button onClick={() => setPreviewIndex(previewIndex + 1)}>
+        <Button
+        disabled={previewIndex >= totalPages}
+        onClick={() => setPreviewIndex(previewIndex + 1)}>
           下一页
-        </button>
+        </Button>
       </div>
       <div
         onScroll={onScroll}

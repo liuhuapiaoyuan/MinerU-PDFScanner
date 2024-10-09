@@ -6,9 +6,18 @@ import { usePreviewState } from "./state";
 import { useRequest } from "ahooks";
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { getApiUrl } from "@/lib/config";
 const TRIGGER_CONTAINER_ID = "MARKDOWN_VIEWER";
 
-async function loadMarkdown(url: string) {
+function addPrefixToImages(markdown: string, prefix: string): string {
+  const imageRegex = /!\[.*?\]\((.*?)\)/g;
+  return markdown.replace(imageRegex, (_match, imageUrl) => {
+      const newImageUrl = `${prefix}${imageUrl}`;
+      return `![Image](${newImageUrl})`;
+  });
+}
+
+async function loadMarkdown(url: string,imagePath:string) {
   try {
     const response = await fetch(url);
 
@@ -28,8 +37,7 @@ async function loadMarkdown(url: string) {
     const body = await response.arrayBuffer();
     const decoder = new TextDecoder(encoding);
     const markdownContent = decoder.decode(body);
-    console.log("markdownContent:", markdownContent);
-    return markdownContent;
+    return addPrefixToImages(markdownContent,imagePath);
   } catch (error) {
     console.error("Error fetching markdown:", error);
   }
@@ -46,7 +54,7 @@ export function Markdown(props: {
     usePreviewState();
 
   const markdowns = useRequest(
-    () => Promise.all(markdownLinks.map(loadMarkdown)),
+    () => Promise.all(markdownLinks.map(link=>loadMarkdown(link,getApiUrl(imagePath+"/")))),
     {
       refreshDeps: [markdownLinks],
       manual: false,
