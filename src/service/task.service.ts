@@ -3,6 +3,7 @@ import { Task } from "./task.model";
 import { taskRepository, TaskRepository } from "./task.repository";
 import { getApiUrl } from "@/lib/config";
 import { Notification } from "@douyinfe/semi-ui";
+import { clearCache } from "ahooks";
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -60,11 +61,15 @@ export class TaskService {
                     content: `文件：${task.file_name}处理失败`,
                 })
             }
+            const newStatus = fail ? "fail" : status;
+            if(task.status!==newStatus){
+                clearCache("tasks_"+task.status)
+            }
 
             // status
             return taskRepository.update({
                 ...task,
-                status: fail ? "fail" : status
+                status: newStatus
             })
         })
     }

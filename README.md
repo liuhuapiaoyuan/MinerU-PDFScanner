@@ -30,7 +30,10 @@ MinerUPdfScanner 是一款基于 [MinerU](https://github.com/opendatalab/MinerU)
 
 
 
-以下是 MinerUPdfScanner 的版本发布计划：
+## 图片展示
+![主页](doc/main.png)
+![文档查看](doc/preview.png)
+![快捷链接](doc/quick.png)
 
 ### 版本发布计划
 

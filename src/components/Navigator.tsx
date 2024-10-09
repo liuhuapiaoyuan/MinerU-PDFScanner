@@ -3,6 +3,7 @@ import { IconGithubLogo } from "@douyinfe/semi-icons";
 import { useMatch, useNavigate } from "react-router-dom";
 import { QuickLink } from "./QuickLink";
 import { IconIntro } from "@douyinfe/semi-icons-lab";
+import { open } from "@tauri-apps/plugin-shell";
 
 export function Navigator() {
   const navigate = useNavigate();
@@ -22,9 +23,7 @@ export function Navigator() {
             onClick={() => navigate("/")} >返回首页</Button>
           }
           <Button
-            onClick={() =>
-              navigate("https://github.com/liuhuapiaoyuan/MinerU-PDFScanner")
-            }
+           onClick={()=>open("https://github.com/liuhuapiaoyuan/MinerU-PDFScanner")}
             theme="borderless"
             icon={<IconGithubLogo size="large" />}
           />

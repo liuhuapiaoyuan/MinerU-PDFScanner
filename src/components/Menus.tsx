@@ -6,8 +6,9 @@ import {
 } from "@douyinfe/semi-icons";
 import { IconConfig, IconList, IconRating } from "@douyinfe/semi-icons-lab";
 
-import { useLocation, useMatch, useNavigate } from "react-router-dom";
+import { Link, useLocation, useMatch, useNavigate } from "react-router-dom";
 import NavFooter from "@douyinfe/semi-ui/lib/es/navigation/Footer";
+import { open } from "@tauri-apps/plugin-shell";
 
 export function Menus() {
   const navigate = useNavigate();
@@ -46,7 +47,9 @@ export function Menus() {
       footer={
         <div className="w-full flex flex-col items-center justify-center gap-2">
           <NavFooter className="!p-0" collapseButton />
-          <div className="group p-2 cursor-pointer rounded-xl text-center border  hover:shadow-sm flex flex-wrap items-center justify-center">
+         <div 
+         onClick={()=>open("https://github.com/liuhuapiaoyuan/MinerU-PDFScanner")}
+         className="group p-2 cursor-pointer rounded-xl text-center border  hover:shadow-sm flex flex-wrap items-center justify-center">
             <IconGithubLogo size="large" />
             <span className="group-hover:text-[#3477EB] !text-[14px]">
               Github Star{" "}

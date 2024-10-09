@@ -32,6 +32,7 @@ export function Component() {
   const tasksReq = useRequest(
     () => taskRepository.list("status in ($1)", [status]),
     {
+      cacheKey:"tasks_"+status,
       refreshDeps: [status],
     }
   );
@@ -60,6 +61,7 @@ export function Component() {
                 </Button>
                 {item.status === "processing" && <Button>取消</Button>}
                 {item.status === "fail" && <Button>重试</Button>}
+                {item.status === "done" && <Button>打包</Button>}
                 {item.status === "done" && <Button>删除</Button>}
               </ButtonGroup>
             }
