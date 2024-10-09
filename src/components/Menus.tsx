@@ -6,18 +6,20 @@ import {
 } from "@douyinfe/semi-icons";
 import { IconConfig, IconList, IconRating } from "@douyinfe/semi-icons-lab";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useMatch, useNavigate } from "react-router-dom";
 import NavFooter from "@douyinfe/semi-ui/lib/es/navigation/Footer";
 
 export function Menus() {
   const navigate = useNavigate();
+  const {pathname} = useLocation()
   return (
     <Nav
       onSelect={(e) => {
         e.itemKey && navigate(e.itemKey.toString());
       }}
       className="h-full  max-w-60 "
-      defaultSelectedKeys={["Home"]}
+      selectedKeys={[pathname]}
+      defaultOpenKeys={['/task']}
       items={[
         {
           itemKey: "/createTask",
@@ -36,7 +38,7 @@ export function Menus() {
           ],
         },
         {
-          itemKey: "setting",
+          itemKey: "/setting",
           text: "设置",
           icon: <IconConfig size="large" />,
         } 

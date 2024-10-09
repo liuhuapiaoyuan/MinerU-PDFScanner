@@ -27,11 +27,14 @@ const StatusMap = {
 };
 
 export function Component() {
-  const match= useMatch("/task/:status")
-  const status = match?.params?.status??"processing"
-  const tasksReq = useRequest(()=>taskRepository.list("status in ($1)",[status]),{
-    refreshDeps:[status]
-  }) 
+  const match = useMatch("/task/:status");
+  const status = match?.params?.status ?? "processing";
+  const tasksReq = useRequest(
+    () => taskRepository.list("status in ($1)", [status]),
+    {
+      refreshDeps: [status],
+    }
+  );
   const navigate = useNavigate();
   return (
     <div>
@@ -50,10 +53,14 @@ export function Component() {
             }
             extra={
               <ButtonGroup theme="borderless">
-                <Button onClick={() => navigate(`/task/preview/${item.task_id}`)}>
+                <Button
+                  onClick={() => navigate(`/task/preview/${item.task_id}`)}
+                >
                   预览
                 </Button>
-                <Button>取消</Button>
+                {item.status === "processing" && <Button>取消</Button>}
+                {item.status === "fail" && <Button>重试</Button>}
+                {item.status === "done" && <Button>删除</Button>}
               </ButtonGroup>
             }
           />

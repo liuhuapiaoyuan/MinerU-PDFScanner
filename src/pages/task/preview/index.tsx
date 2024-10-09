@@ -4,11 +4,18 @@ import { PDFViewer } from "./PDFViewer";
 import { PreviewStateContainer } from "./state";
 import { Task } from "@/service/task.model";
 import { getApiUrl } from "@/lib/config";
+import { PDFViewerSkeleton } from "./PDFViewerSkeleton";
+import { useRequest } from "ahooks";
 
 
 // 加载数据，显示PDF， markdown的情况
 export function Component() {
   const task = useLoaderData() as Task;
+  const contentList = useRequest<Array<{page_idx:number}>,[]>(()=>fetch(getApiUrl(task.content_list_json)).then(r=>r.json()))
+  const pages = contentList.data?.[contentList.data.length-1]?.page_idx ?? 0
+  const markdownLinks = new Array(pages).fill(1).map((_, index) => getApiUrl(`/file/output/${task.task_id}/${index}.md`));
+
+
 
   return (
     <PreviewStateContainer>
@@ -19,7 +26,15 @@ export function Component() {
           />
         </div>
         <div className="flex-1 w-1">
-          <Markdown />
+          {
+            (!contentList.loading) && task.status=='done' && <Markdown 
+              imagePath={task.images}
+              markdownLinks={markdownLinks}
+            />
+          }
+          {
+            (contentList.loading || task.status=='pending' || task.status=='processing') && <PDFViewerSkeleton/>
+          }
         </div>
       </div>
     </PreviewStateContainer>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useCallback, useEffect,  useRef, useState } from "react";
 
 export function useScrollPage(externalRef?: React.RefObject<HTMLDivElement|null>) {
   const [currentPage, setCurrentPage] = useState(0);

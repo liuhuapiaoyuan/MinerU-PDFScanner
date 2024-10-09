@@ -43,6 +43,10 @@ export class TaskService {
         return fetch(getApiUrl(`/task/${task.task_id}`), {}).then(resp => {
             return resp.json()
         }).then(({ status }) => {
+            if (status === 'pedding' || status === 'processing') {
+                this.addTask(task)
+            }
+
             let fail = status.includes('处理失败')
             if (status === 'done') {
                 Notification.success({
