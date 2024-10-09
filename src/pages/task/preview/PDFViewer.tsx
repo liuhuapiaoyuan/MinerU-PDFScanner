@@ -5,16 +5,10 @@ import { usePreviewState } from "./state";
 import { PDFViewerSkeleton } from "./PDFViewerSkeleton";
 
 PDFJS.GlobalWorkerOptions.workerSrc = workerUrl;
-function isElementInScrollableContainer(
-  el: HTMLDivElement,
-  container: HTMLDivElement
-) {
-  const rect = el.getBoundingClientRect();
-  // 按照container的滚动条来判断
-  const containerRect = container.getBoundingClientRect();
-  
-  return rect.top >= containerRect.top  
-}
+
+
+
+
 function useRenderPDF(url: string) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [numPages, setNumPages] = useState(0);
@@ -84,8 +78,9 @@ const url =
 
 const TRIGGER_CONTAINER_ID = "PDF_VIWER"
 
-export function PDFViewer() {
-  const { loading, containerRef } = useRenderPDF(url);
+export function PDFViewer(props:{pdf:string}) {
+
+  const { loading, containerRef } = useRenderPDF(props.pdf);
   const { triggerContainerId,previewIndex, totalPages, setPreviewIndex } = usePreviewState();
   const scrollToPage = useCallback((pageIndex: number) => {
     const pageElement = containerRef.current?.querySelector(

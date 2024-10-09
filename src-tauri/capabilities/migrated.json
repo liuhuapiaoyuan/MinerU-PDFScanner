@@ -1,0 +1,31 @@
+{
+  "identifier": "migrated",
+  "description": "permissions that were migrated from v1",
+  "local": true,
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "shell:allow-open",
+    "shell:default",
+    "sql:default",
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        {
+          "path": "$APPDATA"
+        },
+        {
+          "path": "**"
+        }
+      ]
+    },
+    "store:default",
+    "sql:allow-load",
+    "sql:allow-execute",
+    "sql:allow-close",
+    "sql:allow-select",
+    "fs:default"
+  ]
+}

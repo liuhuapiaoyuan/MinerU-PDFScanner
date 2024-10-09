@@ -29,6 +29,7 @@ export function Menus() {
           text: "扫描历史",
           icon: <IconList  size="large" />,
           items: [
+            { itemKey: "/task/pending", text: "未启动" },
             { itemKey: "/task/processing", text: "进行中" },
             { itemKey: "/task/done", text: "已完成" },
             { itemKey: "/task/error", text: "失败" },
