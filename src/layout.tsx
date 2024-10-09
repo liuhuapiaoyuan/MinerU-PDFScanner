@@ -10,7 +10,7 @@ const BaseLayout = (props: PropsWithChildren) => {
       <Header>
         <Navigator />
       </Header>
-      <Layout>
+      <Layout  className="flex-1 h-1">
         <Sider>
           <Menus />
         </Sider>

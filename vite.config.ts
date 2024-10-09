@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import SemiPlugin from "vite-plugin-semi-theme";
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
@@ -10,7 +11,11 @@ export default defineConfig(async () => ({
     }),
 
   ],
-
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'), // 配置 @ 符号指向 src 目录
+    },
+  },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
   // 1. prevent vite from obscuring rust errors

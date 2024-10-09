@@ -18,7 +18,13 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path mapping */
+    "baseUrl": "src", // 设置基础路径
+    "paths": {
+      "@/*": ["*"] // 将 @ 符号映射到 src 目录
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
