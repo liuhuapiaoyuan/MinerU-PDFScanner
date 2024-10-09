@@ -13,7 +13,7 @@ function addPrefixToImages(markdown: string, prefix: string): string {
   const imageRegex = /!\[.*?\]\((.*?)\)/g;
   return markdown.replace(imageRegex, (_match, imageUrl) => {
       const newImageUrl = `${prefix}${imageUrl}`;
-      return `![Image](${newImageUrl})`;
+      return `![](${newImageUrl})`;
   });
 }
 
