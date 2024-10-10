@@ -16,6 +16,9 @@ MinerUPdfScanner 是一款基于 [MinerU](https://github.com/opendatalab/MinerU)
 4. **查看提取结果**
    - 提供左右分栏模式查看提取结果，左侧为 PDF 文档，右侧为 Markdown 格式的提取结果。
 
+5. **打包导出**
+   - 通过zip导出提取结果，包含Images。
+
 ## 安装
 
 1. 从 [发行页面](https://github.com/your-repo-link/releases) 下载最新的安装包。
