@@ -28,8 +28,8 @@
       "nsis": null
     }
   },
-  "productName": "PDF扫描助理",
-  "mainBinaryName": "mineru-pdf-scanner",
+  "productName": "MinerUPDfScanner",
+  "mainBinaryName": "MinerUPDfScanner",
   "version": "0.4.2",
   "identifier": "com.ggss.miner-pdf-scanner",
   "plugins": {
