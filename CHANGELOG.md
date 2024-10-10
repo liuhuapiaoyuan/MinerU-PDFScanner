@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.3...v0.4.4) (2024-10-10)
+
+
+### Bug Fixes
+
+* test rust cache ([c674fda](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/c674fdaadbf4815ebecdebe1ea0167d7a69f9830))
+
 ## [0.4.3](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.2...v0.4.3) (2024-10-10)
 
 
