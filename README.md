@@ -32,7 +32,7 @@ MinerUPdfScanner 是一款基于 [MinerU](https://github.com/opendatalab/MinerU)
 2. 点击“创建任务”，选择要提取的 PDF 文件。
 3. 提交任务后，可以在“提取记录”中查看任务状态。
 4. 提取完成后，可以导出结果或在右侧查看提取内容。
-
+5. PDF查看左右两侧分栏同步查看
 
 
 ## 图片展示
