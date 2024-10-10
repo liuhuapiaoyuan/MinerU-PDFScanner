@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.3.1...v0.4.0) (2024-10-10)
+
+
+### Features
+
+* 增加版本检测自动更新 ([bc3ff44](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/bc3ff44b362c9ab563e08320f7171621e103cd91))
+* 调整 ([722e871](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/722e871ba9940cc165467a3c165265707a2e82fa))
+
 ## [0.3.1](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.3.0...v0.3.1) (2024-10-10)
 
 
