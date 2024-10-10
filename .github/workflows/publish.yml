@@ -2,23 +2,26 @@ name: 'publish'
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
   workflow_dispatch:
 jobs:
   publish-tauri:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [ windows-latest]
+        #platform: [macos-latest, ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v2
 
       - name: setup bun
-        uses: actions/setup-bun@main 
+        uses: antongolub/action-setup-bun@v1
         with:
-          cache-hit: true
+          cache: true
+          cache-bin: true
+
 
       - name: install Rust stable
         uses: actions-rs/toolchain@v1
