@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.1...v0.2.2) (2024-10-10)
+
+
+### Bug Fixes
+
+* 调整release,修复bun ([be3162b](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/be3162b53b58dabb5f4965932fd7900184a4837a))
+
 ## [0.2.1](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.0...v0.2.1) (2024-10-10)
 
 
