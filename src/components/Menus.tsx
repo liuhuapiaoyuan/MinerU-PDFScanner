@@ -1,12 +1,10 @@
 import { Nav } from "@douyinfe/semi-ui";
 import {
-  IconHome,
-  IconHistogram,
   IconGithubLogo,
 } from "@douyinfe/semi-icons";
 import { IconConfig, IconList, IconRating } from "@douyinfe/semi-icons-lab";
 
-import { Link, useLocation, useMatch, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavFooter from "@douyinfe/semi-ui/lib/es/navigation/Footer";
 import { open } from "@tauri-apps/plugin-shell";
 

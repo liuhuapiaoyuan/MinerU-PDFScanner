@@ -48,6 +48,14 @@ export class ConfigService {
         clearCache("CONFIG")
         return this.store.set(config)
     }
+    /*
+     * 获取文件路径
+    */
+    async getFileUrl(filePath:string){
+        const config = await this.get()
+        const split = filePath.startsWith("/")? "" : "/"
+        return `${config.fileUrl}${split}${filePath}`
+    }
 }
 
 export const configService = new ConfigService()

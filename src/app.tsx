@@ -4,9 +4,8 @@ import { Outlet } from "react-router-dom";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./not-found";
-import { taskRepository } from "./service/task.repository";
 import { taskService } from "./service/task.service";
-import { configService, ConfigService } from "./service/config.service";
+import { configService } from "./service/config.service";
 
 const router = createBrowserRouter([
   {

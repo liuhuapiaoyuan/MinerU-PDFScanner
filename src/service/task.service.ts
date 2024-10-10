@@ -4,6 +4,8 @@ import { taskRepository, TaskRepository } from "./task.repository";
 import { getApiUrl } from "@/lib/config";
 import { Notification } from "@douyinfe/semi-ui";
 import { clearCache } from "ahooks";
+import { configService } from "./config.service";
+import { open } from "@tauri-apps/plugin-shell";
 
 function addPrefixToImages(markdown: string, prefix: string): string {
   const imageRegex = /!\[.*?\]\((.*?)\)/g;
@@ -146,14 +148,16 @@ export class TaskService {
    */
   async loadTask(task_id: string): Promise<LoadTaskResult> {
     const task = await this.taskRepository.findById(task_id)
+    const config = await configService.get()
+    
     if (!task) {
       throw new Error("任务不存在")
     }
-    const contentList = await fetch(getApiUrl(task.content_list_json)).then((r) => r.json()).then(r => r as Array<{ page_idx: number }>)
+    const contentList = await fetch(`${config.fileUrl}${task.content_list_json}`).then((r) => r.json()).then(r => r as Array<{ page_idx: number }>)
     const pages = contentList?.[contentList.length - 1]?.page_idx ?? 0;
     const markdownLinks = new Array(pages)
       .fill(1)
-      .map((_, index) => getApiUrl(`/file/output/${task.task_id}/${index}.md`));
+      .map((_, index) => (`${config.fileUrl}${task.images}/${index}.md`));
     const markdowns = await Promise.all(markdownLinks.map(link => loadMarkdown(link, task.images)))
     return {
       task,
@@ -164,6 +168,12 @@ export class TaskService {
         content
       }))
     }
+  }
+
+
+  async packageTask(task_id: string): Promise<void> {
+    const config = await configService.get()
+    open(`${config.uploadUrl}/pack/${task_id}`)
   }
 
 }

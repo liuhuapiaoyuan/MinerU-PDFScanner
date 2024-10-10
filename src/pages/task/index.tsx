@@ -1,9 +1,10 @@
-import React from "react";
 import { List, Avatar, ButtonGroup, Button } from "@douyinfe/semi-ui";
-import { Tag, Space } from "@douyinfe/semi-ui";
+import { Tag } from "@douyinfe/semi-ui";
 import { useMatch, useNavigate } from "react-router-dom";
 import { taskRepository } from "@/service/task.repository";
 import { useRequest } from "ahooks";
+import { configService } from "@/service/config.service";
+import { taskService } from "@/service/task.service";
 
 const StatusMap = {
   done: (
@@ -61,7 +62,13 @@ export function Component() {
                 </Button>
                 {item.status === "processing" && <Button>取消</Button>}
                 {item.status === "fail" && <Button>重试</Button>}
-                {item.status === "done" && <Button>打包</Button>}
+                {item.status === "done" && <Button
+                onClick={()=>{
+
+
+                    taskService.packageTask(item.task_id)
+                }}
+                >打包</Button>}
                 {item.status === "done" && <Button>删除</Button>}
               </ButtonGroup>
             }

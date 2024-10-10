@@ -73,9 +73,6 @@ function useRenderPDF(url: string) {
   return { containerRef, loading, numPages };
 }
 
-const url =
-  "https://static.openxlab.org.cn/opendatalab/assets/pdf/demo1/%E7%A4%BA%E4%BE%8B1.pdf";
-
 
 const TRIGGER_CONTAINER_ID = "PDF_VIWER"
 
