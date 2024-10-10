@@ -30,7 +30,7 @@
   },
   "productName": "PDF扫描助理",
   "mainBinaryName": "mineru-pdf-scanner",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "identifier": "com.ggss.miner-pdf-scanner",
   "plugins": {
     "sql": {
