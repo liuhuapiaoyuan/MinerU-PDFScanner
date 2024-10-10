@@ -35,6 +35,7 @@ jobs:
         uses: swatinem/rust-cache@v2
         with:
           workspaces: './src-tauri -> target'
+          key: ${{ runner.os }}-stable-tauri-${{ hashFiles('**/Cargo.lock') }}
 
       - name: install webkit2gtk (ubuntu only)
         if: matrix.platform == 'ubuntu-latest'
