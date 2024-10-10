@@ -4,10 +4,10 @@ pub fn load_migrations() -> Vec<Migration> {
     let mut migrations = Vec::new();
     // 初始化版本
     migrations.push(Migration {
-        version:1,
-        description:"init_data_base",
+        version: 1,
+        description: "init_data_base",
         kind: MigrationKind::Up,
-        sql:r#"
+        sql: r#"
         CREATE TABLE tasks (
     task_id TEXT PRIMARY KEY,
     file_name TEXT,
@@ -21,9 +21,6 @@ pub fn load_migrations() -> Vec<Migration> {
 );
         "#,
     });
-
-
-
 
     migrations
 }

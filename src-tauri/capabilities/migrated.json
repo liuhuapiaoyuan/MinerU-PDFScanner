@@ -26,6 +26,7 @@
     "sql:allow-execute",
     "sql:allow-close",
     "sql:allow-select",
-    "fs:default"
+    "fs:default",
+    "upload:default"
   ]
 }
