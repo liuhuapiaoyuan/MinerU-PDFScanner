@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.2...v0.4.3) (2024-10-10)
+
+
+### Bug Fixes
+
+* fixed production name ([501d538](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/501d53891b97c76c570c822edd999688ea2c322c))
+* use rust cache ([7e648ce](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/7e648cee291c1f082ed8ec107b219cad107b3e2b))
+
 ## [0.4.2](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.1...v0.4.2) (2024-10-10)
 
 
