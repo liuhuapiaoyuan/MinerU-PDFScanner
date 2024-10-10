@@ -17,10 +17,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: setup bun
-        uses: antongolub/action-setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
-          cache: true
-          cache-bin: true
+          cache-hit: true
 
 
       - name: install Rust stable
