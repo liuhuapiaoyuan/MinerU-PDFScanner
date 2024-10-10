@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.5...v0.3.0) (2024-10-10)
+
+
+### Features
+
+* add macos ([56d0d8a](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/56d0d8a736abca584d8b6e5b90fff8ad19f1e3ae))
+* direct release ([f31a4ee](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/f31a4ee04312da0106293a54debf354d2cf05362))
+
 ## [0.2.5](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.4...v0.2.5) (2024-10-10)
 
 
