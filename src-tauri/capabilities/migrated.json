@@ -6,6 +6,8 @@
     "main"
   ],
   "permissions": [
+    "process:default",
+    "updater:default",
     "core:default",
     "shell:allow-open",
     "shell:default",

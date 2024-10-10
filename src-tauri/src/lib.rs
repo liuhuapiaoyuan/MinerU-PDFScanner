@@ -10,6 +10,7 @@ pub fn run() {
     let migrations = migration::load_migrations();
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_process::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_upload::init())
         .plugin(tauri_plugin_fs::init())
