@@ -7,7 +7,7 @@
     "devUrl": "http://localhost:1420"
   },
   "bundle": {
-    "createUpdaterArtifacts": true , 
+    "createUpdaterArtifacts": true,
     "active": true,
     "targets": "all",
     "icon": [
@@ -30,14 +30,14 @@
   },
   "productName": "PDF扫描助理",
   "mainBinaryName": "mineru-pdf-scanner",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "identifier": "com.ggss.miner-pdf-scanner",
   "plugins": {
     "sql": {
       "preload": [
         "sqlite:database.db"
       ]
-    } ,
+    },
     "plugins": {
       "updater": {
         "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDY1Njk2QTM2RjEzOTEwRTQKUldUa0VEbnhObXBwWmVEU3RGNjJXY2luSHBaSS9qZVZJeEtkQ3hVeUI0QTNjWlkrbHJJTkdYR1cK",
