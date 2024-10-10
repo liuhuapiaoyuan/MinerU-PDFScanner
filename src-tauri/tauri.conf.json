@@ -24,7 +24,7 @@
       "nsis": null
     }
   },
-  "productName": "PDF扫描助力",
+  "productName": "PDF扫描助理",
   "mainBinaryName": "mineru-pdf-scanner",
   "version": "0.1.0",
   "identifier": "com.ggss.miner-pdf-scanner",
@@ -43,7 +43,7 @@
     },
     "windows": [
       {
-        "title": "mineru-pdf-scanner",
+        "title": "PDF扫描助理",
         "width": 800,
         "height": 600
       }
