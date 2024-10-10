@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.1](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.0...v0.4.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* 修正参数配置错误 ([ea1761a](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/ea1761a7f3265909e328b38a038f9c144758f27e))
+* 调整插件参数配置错误 ([e6420e3](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/e6420e33bc297a46c906987b0d10ab24d39df8fd))
+
+
+### Performance Improvements
+
+* 调整工作流，支持updater ([f8190c0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/f8190c0e11716c15087aebf1cacb6359fe1e0d62))
+
 ## [0.4.0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.3.1...v0.4.0) (2024-10-10)
 
 
