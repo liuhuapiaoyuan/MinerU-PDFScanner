@@ -18,6 +18,9 @@
     ],
     "copyright": "2024 liuhuapiaoyuan",
     "windows": {
+      "certificateThumbprint": "ddac2dec80c2c10a6cd2cf9cdaa1bd5b72a89620",
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.comodoca.com",
       "wix": {
         "language": "zh-CN"
       },

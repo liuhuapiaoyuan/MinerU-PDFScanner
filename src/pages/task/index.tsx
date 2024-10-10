@@ -3,7 +3,6 @@ import { Tag } from "@douyinfe/semi-ui";
 import { useMatch, useNavigate } from "react-router-dom";
 import { taskRepository } from "@/service/task.repository";
 import { useRequest } from "ahooks";
-import { configService } from "@/service/config.service";
 import { taskService } from "@/service/task.service";
 
 const StatusMap = {
