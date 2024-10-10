@@ -51,8 +51,7 @@ const router = createBrowserRouter([
           if (!params.id) {
             return undefined;
           }
-          const task = await taskRepository.findById(params.id);
-          return task;
+          return taskService.loadTask(params.id)
         },
       },
       {

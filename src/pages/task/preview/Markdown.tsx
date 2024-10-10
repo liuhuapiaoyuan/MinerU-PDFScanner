@@ -43,23 +43,18 @@ async function loadMarkdown(url: string,imagePath:string) {
   }
 }
 
-export function Markdown(props: {
-  imagePath: string;
-  markdownLinks: string[];
+export function Markdown(props: { 
+  markdowns:Array<{
+    content?:string , 
+    page_idx:number
+  }>
 }) {
-  const { imagePath, markdownLinks } = props;
+  const {markdowns} = props;
 
   const { currentPage, containerRef, scrollToPage } = useScrollPage();
   const { triggerContainerId, previewIndex, setPreviewIndex } =
     usePreviewState();
 
-  const markdowns = useRequest(
-    () => Promise.all(markdownLinks.map(link=>loadMarkdown(link,getApiUrl(imagePath+"/")))),
-    {
-      refreshDeps: [markdownLinks],
-      manual: false,
-    }
-  );
 
   useEffect(() => {
     if (currentPage !== previewIndex) {
@@ -74,12 +69,12 @@ export function Markdown(props: {
 
   return (
     <div ref={containerRef} className="relative h-full overflow-y-auto">
-      {markdowns.data?.map((content, index) => (
-        <div data-page={index + 1} key={index}>
+      {markdowns?.map((content) => (
+        <div data-page={content.page_idx} key={content.page_idx}>
           <MarkdownRender 
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeKatex]}
-          raw={content} />
+          raw={content.content} />
         </div>
       ))}
     </div>
