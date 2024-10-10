@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.1](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.3.0...v0.3.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* remove macos ([fcb3753](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/fcb37536b59f92e0cd48b54a28a40bd99d1a1dea))
+* update PAT ([b2a725e](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/b2a725e6c4770f63c0b9a5cc16df8560455f000e))
+* 调整成PAT，来触发publish ([7f264bc](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/7f264bcd6fe308f1f20e20afa6785be7af1e33be))
+
 ## [0.3.0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.5...v0.3.0) (2024-10-10)
 
 
