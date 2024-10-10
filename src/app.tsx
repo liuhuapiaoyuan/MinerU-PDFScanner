@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./not-found";
 import { taskRepository } from "./service/task.repository";
 import { taskService } from "./service/task.service";
+import { configService, ConfigService } from "./service/config.service";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/setting",
+        loader: async () => configService.get(),
         lazy: () => import("./pages/setting"),
       },
     ],
