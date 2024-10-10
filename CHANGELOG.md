@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.4...v0.2.5) (2024-10-10)
+
+
+### Bug Fixes
+
+* 修复pdfjs-dist ([1e89ccc](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/1e89ccc247477c2d9f33f0e37946d577f8ddb574))
+
 ## [0.2.4](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.2.3...v0.2.4) (2024-10-10)
 
 
