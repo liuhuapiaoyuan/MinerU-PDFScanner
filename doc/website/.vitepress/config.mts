@@ -29,6 +29,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: '更新日志', link: '/changelogs' },
     ],
 
     search: {
@@ -37,10 +38,9 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '更新日志',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '更新日志', link: '/changelogs' },
         ]
       }
     ],
