@@ -45,12 +45,8 @@ features:
 ---
 
 
-<div align="center" style="margin-top:20px">
-  <img src="./preview.png" alt="描述文字" />
-</div>
-<div align="center" style="margin-top:20px">
-  <img src="./quick.png" alt="描述文字" />
-</div>
-<div align="center" style="margin-top:20px">
-  <img src="./task.png" alt="描述文字" />
-</div>
+![描述文字](./public/preview.png)
+
+![描述文字](./public/quick.png)
+
+![描述文字](./public/task.png)
