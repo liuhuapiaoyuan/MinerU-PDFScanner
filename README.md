@@ -21,7 +21,7 @@ MinerUPdfScanner 是一款基于 [MinerU](https://github.com/opendatalab/MinerU)
 
 ## 安装
 
-1. 从 [发行页面](https://github.com/your-repo-link/releases) 下载最新的安装包。
+1. 从 [发行页面](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/releases/latest) 下载最新的安装包。
 2. 双击安装包并按照提示完成安装。
 
 ## 使用方法
@@ -65,7 +65,7 @@ MinerUPdfScanner 是一款基于 [MinerU](https://github.com/opendatalab/MinerU)
 
 ## 技术支持
 
-如有问题或建议，请在 [Issues 页面](https://github.com/your-repo-link/issues) 提出。
+如有问题或建议，请在 [Issues 页面](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/issues) 提出。
 
 ## 贡献
 
