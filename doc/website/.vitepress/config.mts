@@ -46,7 +46,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/MinerU-PDFScanner' }
+      { icon: 'github', link: 'https://github.com/liuhuapiaoyuan/MinerU-PDFScanner' }
     ]
   }
 })
