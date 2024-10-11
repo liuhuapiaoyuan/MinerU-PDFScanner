@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: Github
-      link: https://github.com/brenoepics/MinerU-PDFScanner
+      link: https://github.com/liuhuapiaoyuan/MinerU-PDFScanner
     - theme: alt
       text: 下载
       link: https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/releases/latest
