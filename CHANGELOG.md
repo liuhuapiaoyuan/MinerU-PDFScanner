@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.5.0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.4...v0.5.0) (2024-10-17)
+
+
+### Features
+
+* **doc:** add doc website ([17d43aa](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/17d43aaf935014c66a1a1fdc62e2fbeedf103670))
+* 添加图片放大查看 ([fe18539](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/fe1853919d8f98d2d80aa6201d4de61c06d5781a))
+
+
+### Bug Fixes
+
+* ... ([f96497c](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/f96497ce74fa70db77dac8b8bea6903b19379d1f))
+* add postcss ([8144da0](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/8144da0457dbaa78e3af81ca499ed95d296602b3))
+* config error ([73d8265](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/73d8265ec6e59f77eda4ffa095e1409544f19e6b))
+* correct upload URL in task creation form ([f360ad5](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/f360ad549e7376e9b36cbcaea52fe82e6bdf007b))
+* **doc/website:** 修复灯箱不可用 ([8c455bb](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/8c455bb6624cdc9f22cb184cd7447054322bb3b1))
+* **docs/website:** 修复github链接错误 ([07958df](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/07958df777728a5ae23f9915172ee29c1cad5d07))
+* remove autoprefixer ([3187e9e](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/3187e9edc2b04718f4af8b4e7db4bebd99d1d4a6))
+* update doc ([45ddf33](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/45ddf33a2ffd3542dbc50759a4147672e97d3438))
+* 修复图片路径错误 ([fe18539](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/fe1853919d8f98d2d80aa6201d4de61c06d5781a))
+* 修复链接错误 ([1806cae](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/1806caee3bf66bf7f6c0ac68a843b477769f75a7))
+* 调整成bun ([e0cbf81](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/commit/e0cbf81e3c82dd62c59584db5b847ef8f1950239))
+
 ## [0.4.4](https://github.com/liuhuapiaoyuan/MinerU-PDFScanner/compare/v0.4.3...v0.4.4) (2024-10-10)
 
 
