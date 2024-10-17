@@ -23,7 +23,7 @@ export function Component() {
         </p>
         <Spin spinning={configReq.loading} wrapperClassName="w-full ">
           <Upload
-            action={configReq.data?.fileUrl}
+            action={configReq.data?.uploadUrl}
             onSuccess={async (res: Task) => {
               Toast.info({
                 content: (
